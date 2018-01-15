@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ModelRbacStoreContainer" CdmEntityContainer="EntitiesRbac">
+    <EntitySetMapping Name="Articolo">
+      <EntityTypeMapping TypeName="ModelRbac.Articolo">
+        <MappingFragment StoreEntitySet="Articolo">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Titolo" ColumnName="Titolo" />
+          <ScalarProperty Name="Testo" ColumnName="Testo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

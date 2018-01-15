@@ -1,0 +1,18 @@
+Il progetto è la base per le applicazioni asp net mvc 5 su .net 4.5
+Ha la gestione RBAC con utenti, ruoli e privilegi.
+I privilegi stanno nella tabella che aspnet usa per i ruoli, mentre in quella denominata dei gruppi ci sono i ruoli.
+Su ogni controller definire il privilegio (ruolo) e poi associarli nei ruoli (gruppi).
+Al primo lancio l'applicazione crea un utente "gianluca.moroni@feria.it" con password "Feria@123456" e privilegio "Admin" e 
+ruolo (gruppo) "SuperAdmins".
+Solo il privilegio "Admin" gestisce gli utenti ed i relativi privilegi. 
+Per vedere un esempio di utilizzo ho creato la tabella "Articolo", ed i privilegi "Articolo_Create", "Articolo_Read",
+"Articolo_Edit" ed "Articolo_Delete" tutti del ruolo (gruppo) "Users".
+Su ogni metodo dentro Articolo Controller è specificato il privilegio che può essere usato.
+Il privilegio "Admin" assegnato sul metodo index permette agli utenti "SuperAdmins" anche di leggere articoli.
+Solo i privilegi del gruppo "Users" poi ne permettono le altre azioni sui metodi di Articolo Controller.
+
+Mi sono basato su questi articoli:
+http://johnatten.com/2014/08/10/asp-net-identity-2-0-implementing-group-based-permissions-management/
+http://johnatten.com/2014/07/13/asp-net-identity-2-0-extending-identity-models-and-using-integer-keys-instead-of-strings/
+https://github.com/TypecastException/AspNetIdentity2GroupPermissions
+https://blogs.msdn.microsoft.com/webdev/2013/10/16/customizing-profile-information-in-asp-net-identity-in-vs-2013-templates/
